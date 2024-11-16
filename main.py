@@ -19,17 +19,11 @@ app.add_middleware(
 class Message(BaseModel):
     message: str
 
-@app.post("/post-chat")
-async def chat(message: Message):
-    return {"response": "You're awesome"}
 
-@app.get("/chat")
-async def chat():
-    return {"response": "You're awesome"}
 
 @app.get('/')
 async def root():
-    return {"message": "Welcome to Backend Test Server"}
+    return {"message": "Welcome to Frontend Proxy Test Server"}
 
 if __name__ == "__main__":
     import uvicorn
