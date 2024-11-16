@@ -43,5 +43,9 @@ async def proxy_request(request: EndpointRequest):
     except httpx.RequestError as e:
         raise HTTPException(status_code=400, detail=str(e))
 
+@app.get('/')
+async def root():
+    return {"message": "Welcome to Frontend Proxy Server"}
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
